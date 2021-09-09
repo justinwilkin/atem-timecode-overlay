@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timecode</title>
+    <style>
+        #timecode-wrapper {
+            font-size: 40px;
+            color: #222;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- Div wrapper for our timecode. Apply styles to this in order to change timecode output -->
+    <div id="timecode-wrapper"></div>
+    <!-- Socket io implementation to wrap our timecode -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+
+        socket.on('connect', () => {
+            console.log('timecode: socket connected');
+        });
+
+        // Handle our timecode event and update the timecode
+        socket.on('timecode', (timecode) => {
+            var hour = timecode.hour.toLocaleString('en-US', {
+                minimumIntegerDigits: 2,
+                useGrouping: false
+            });
+            var minute = timecode.minute.toLocaleString('en-US', {
+                minimumIntegerDigits: 2,
+                useGrouping: false
+            });;
+            var second = timecode.second.toLocaleString('en-US', {
+                minimumIntegerDigits: 2,
+                useGrouping: false
+            });;
+            var frame = timecode.frame.toLocaleString('en-US', {
+                minimumIntegerDigits: 2,
+                useGrouping: false
+            });;
+            document.getElementById('timecode-wrapper').innerText = `${hour}:${minute}:${second}:${frame}`;
+        });
+    </script>
+</body>
+</html>

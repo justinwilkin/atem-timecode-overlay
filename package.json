@@ -1,0 +1,17 @@
+{
+  "name": "atem-timecode-overlay",
+  "version": "1.0.0",
+  "description": "Barebones overlay of a timecode out from your ATEM switcher using a websource",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Justin Wilkin (Code Candy)",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "atem-connection": "^2.3.0",
+    "express": "^4.17.1",
+    "socket.io": "^4.2.0"
+  }
+}
