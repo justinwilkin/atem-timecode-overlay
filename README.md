@@ -10,7 +10,7 @@ A barebones [socket.io](https://socket.io), [node.js](https://nodejs.org/en/) an
 
 ### Dependencies
 
-* Requires node.js v12.0.0
+* Requires node.js v12.0.0+
 * All other dependencies will be installed via node.
 
 ### Installing
@@ -20,7 +20,6 @@ clone the repository to your local machine and navigate to the local folder.
 Open terminal and run the following:
 
 ```
-// To install the dependencies
 npm install
 ```
 
@@ -40,12 +39,24 @@ PORT_NUMBER = 3000
 ```
 Default is 3000, just the default port usually used by express. You can change this if you are using something like PlayoutBee which uses port 3000, or if you have something else running on that port.
 
+If you would like to change the style of the timecode: such as font, size or color. Open the timecode.html file and change the style for #timecode-wrapper.
+
+Styles can be applied using css or however you see fit for the HTML of the page.
+
+```
+#timecode-wrapper {
+   font-size: 40px;
+   color: #222;
+   font-weight: bold;
+   font-family: Arial, sans-serif;
+}
+```
+
 ### Executing program
 
 To run the program open terminal again and run the following:
 
 ```
-// To start the program
 npm start
 ```
 
