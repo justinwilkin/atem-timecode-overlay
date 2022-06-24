@@ -60,7 +60,7 @@ To run the program open terminal again and run the following:
 npm start
 ```
 
-Open your browser and navigate to http://localhost:{PORT_NUMBER}
+Open your browser and navigate to https://localhost:{PORT_NUMBER}
 
 (i.e. https://localhost:3000)
 
